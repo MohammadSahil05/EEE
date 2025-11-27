@@ -257,6 +257,69 @@ html {
 .secondary-btn:hover {
   background: rgba(56, 189, 248, 0.1);
 }
+.resource-details {
+  margin-top: 1.6rem;
+  padding: 1.2rem 1.4rem;
+  background: #020617;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  transition: all 0.3s ease;
+}
+
+.resource-details.hidden {
+  opacity: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.resource-details h3 {
+  margin-bottom: 0.5rem;
+}
+
+.resource-details ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resource-details li {
+  padding: 0.3rem 0;
+}
+
+.resource-details a {
+  color: #38bdf8;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.resource-details a:hover {
+  text-decoration: underline;
+}
+.resource-item {
+  border-radius: 0.7rem;
+  padding: 0.55rem 0.75rem;
+  margin-bottom: 0.35rem;
+  background: #020617;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.resource-item a {
+  display: block;
+  width: 100%;
+  color: #38bdf8;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.resource-item:hover {
+  background: rgba(56, 189, 248, 0.07);
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+
 
 /* ========== FOOTER ========== */
 .footer {
@@ -486,4 +549,210 @@ html {
   transform: translateY(-4px);
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.7);
   border-color: #38bdf8;
+}
+
+/* Dark circuit background for whole site */
+body {
+  background-color: #020617;
+  color: #e5e7eb;
+  background-image:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 60%),
+    url("assets/dark-circuit-bg.jpg"); /* put any circuit wallpaper here */
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Page wrapper (if not already defined) */
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+}
+
+/* Playground layout */
+.playground-layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 1.6rem;
+  margin-top: 1.4rem;
+}
+
+/* Palette */
+.palette {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  padding: 1rem;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+}
+
+.palette h3 {
+  margin-bottom: 0.3rem;
+}
+
+.palette-hint {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 0.8rem;
+}
+
+.palette-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.7rem;
+  background: #020617;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.palette-item strong {
+  font-size: 0.9rem;
+}
+
+.palette-desc {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.palette-note {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.mini-btn {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #38bdf8;
+  background: transparent;
+  color: #38bdf8;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Canvas */
+.canvas {
+  position: relative;
+  min-height: 360px;
+  background: rgba(15, 23, 42, 0.97);
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+}
+
+.canvas-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.grid-overlay {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(30, 64, 175, 0.2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(30, 64, 175, 0.2) 1px,
+      transparent 1px
+    );
+  background-size: 26px 26px;
+  opacity: 0.5;
+}
+
+.canvas-label {
+  position: absolute;
+  bottom: 0.7rem;
+  left: 1rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Draggable circuit nodes */
+.circuit-node {
+  position: absolute;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: #020617;
+  border: 1px solid rgba(56, 189, 248, 0.8);
+  font-size: 0.8rem;
+  cursor: grab;
+  z-index: 2;
+  user-select: none;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.9);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.circuit-node:active {
+  cursor: grabbing;
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.9);
+}
+
+/* Different colors per type (optional) */
+.circuit-node.battery { border-color: #22c55e; }
+.circuit-node.resistor { border-color: #f97316; }
+.circuit-node.led { border-color: #e11d48; }
+.circuit-node.switch { border-color: #a855f7; }
+
+/* Simple fade-up animation (if not already in file) */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .playground-layout {
+    grid-template-columns: 1fr;
+  }
+}
+/* Selected node (for connecting wires) */
+.circuit-node.selected {
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.9);
+}
+
+/* Wire between nodes */
+.wire {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #a855f7);
+  transform-origin: 0 50%;
+  opacity: 0.9;
+}
+
+/* LED ON effect */
+.circuit-node.led-on {
+  background: radial-gradient(circle at center, #f97316, #020617);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.9);
+  animation: ledGlow 1s ease-in-out infinite alternate;
+}
+
+@keyframes ledGlow {
+  from {
+    box-shadow: 0 0 8px rgba(249, 115, 22, 0.7);
+  }
+  to {
+    box-shadow: 0 0 16px rgba(249, 115, 22, 1);
+  }
+}
+
+/* Switch ON effect */
+.circuit-node.switch-on {
+  background: radial-gradient(circle at center, #22c55e, #020617);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
 }

@@ -30,44 +30,51 @@
       <div class="resource-card fade-in-up fade-delay-1">
         <h3>PDF Notes</h3>
         <p>Download basic electronics notes for quick revision.</p>
-        <button class="secondary-btn">Download (Mock)</button>
+        <button class="secondary-btn" onclick="showResource('pdf')">
+          Open PDFs
+        </button>
       </div>
       <div class="resource-card fade-in-up fade-delay-2">
         <h3>YouTube Tutorials</h3>
         <p>Watch videos to understand concepts visually.</p>
-        <button class="secondary-btn">View Playlist (Mock)</button>
+        <button class="secondary-btn" onclick="showResource('yt')">
+          Open YouTube Links
+        </button>
       </div>
       <div class="resource-card fade-in-up fade-delay-3">
         <h3>Simulation Tools</h3>
         <p>Use online circuit simulators to practice and experiment.</p>
-        <button class="secondary-btn">Try Simulator (Mock)</button>
+        <button class="secondary-btn" onclick="showResource('tools')">
+          Open Tools
+        </button>
       </div>
     </div>
+
+    <!-- Dynamic resource details box -->
+    <div id="resourceDetails" class="resource-details hidden"></div>
   </section>
 
-  <!-- FEEDBACK SECTION -->
   <section class="section fade-in-up">
-    <h2>Send Us Your Feedback</h2>
-    <p class="section-subtitle">
-      Help us improve ElectroLearn by sharing your thoughts.
-    </p>
+  <h2>Send Us Your Feedback</h2>
+  <p class="section-subtitle">
+    Help us improve ElectroLearn by sharing your thoughts.
+  </p>
 
-    <div class="feedback-card">
+  <div class="feedback-card">
+    <div class="feedback-row">
       <input type="text" id="fbName" placeholder="Your Name" />
       <input type="email" id="fbEmail" placeholder="Your Email" />
-      <textarea id="fbMessage" placeholder="Your Message"></textarea>
-
-      <button class="primary-btn" onclick="submitFeedback()">
-        Submit Feedback ✉️
-      </button>
-
-      <p id="fbStatus" class="feedback-status"></p>
     </div>
-  </section>
 
-  <footer class="footer">
-    <p>Made for EEE Mini Project • Electronics + AI Chatbot • ElectroLearn</p>
-  </footer>
+    <textarea id="fbMessage" placeholder="Your Message"></textarea>
+
+    <button class="primary-btn" onclick="submitFeedback()">
+      Submit Feedback ✉️
+    </button>
+
+    <p id="fbStatus" class="feedback-status"></p>
+  </div>
+</section>
 
   <!-- CHATBOT -->
   <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
@@ -87,7 +94,14 @@
         onkeydown="handleKeyPress(event)"
       />
       <button onclick="sendMessage()">Send</button>
+    <button class="secondary-btn" onclick="showResource('pdf')">Open PDFs</button>
+<button class="secondary-btn" onclick="showResource('yt')">Open YouTube Links</button>
+<button class="secondary-btn" onclick="showResource('tools')">Open Tools</button>
+
+<div id="resourceDetails" class="resource-details hidden"></div>
+
     </div>
+
   </div>
 
   <script src="script.js"></script>

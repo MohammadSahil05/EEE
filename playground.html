@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ElectroLearn – Circuit Playzone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">⚡ ElectroLearn</div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="components.html" class="nav-link">Components</a>
+      <a href="applications.html" class="nav-link">Applications</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="quiz.html" class="nav-link">Quiz</a>
+      <a href="playground.html" class="nav-link active">Playzone</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section fade-in-up">
+      <h2>Circuit Playzone</h2>
+      <p class="section-subtitle">
+        Drag the components onto the board and arrange them to explain your circuit.
+        This is a visual playground for your mini project demo.
+      </p>
+
+      <div class="playground-layout">
+        <!-- Palette -->
+        <div class="palette">
+          <h3>Components</h3>
+          <p class="palette-hint">Click “Add” to drop a copy into the board.</p>
+
+          <div class="palette-item battery">
+            <div>
+              <strong>Battery</strong>
+              <p class="palette-desc">DC supply (+ / –)</p>
+            </div>
+            <button class="mini-btn" onclick="addNode('battery')">Add</button>
+          </div>
+
+          <div class="palette-item resistor">
+            <div>
+              <strong>Resistor</strong>
+              <p class="palette-desc">Limits current</p>
+            </div>
+            <button class="mini-btn" onclick="addNode('resistor')">Add</button>
+          </div>
+
+          <div class="palette-item led">
+            <div>
+              <strong>LED</strong>
+              <p class="palette-desc">Glows when forward biased</p>
+            </div>
+            <button class="mini-btn" onclick="addNode('led')">Add</button>
+          </div>
+
+          <div class="palette-item switch">
+            <div>
+              <strong>Switch</strong>
+              <p class="palette-desc">Open / close circuit</p>
+            </div>
+            <button class="mini-btn" onclick="addNode('switch')">Add</button>
+          </div>
+
+          <small class="palette-note">
+            Note: This is not an electrical simulator, only a visual layout tool.
+          </small>
+        </div>
+
+        <!-- Canvas -->
+        <div class="canvas" id="circuitCanvas">
+          <div class="canvas-bg">
+            <div class="grid-overlay"></div>
+            <span class="canvas-label">Circuit Board Area – drag components freely</span>
+          </div>
+          <!-- Draggable nodes will be injected here by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made for EEE Mini Project • Electronics + AI Chatbot • ElectroLearn</p>
+  </footer>
+
+  <!-- CHATBOT (same as other pages) -->
+  <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+    💬
+  </div>
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+      <span>ElectroBot – Your Electronics Assistant</span>
+      <button class="close-btn" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody"></div>
+    <div class="chatbot-input-area">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask me anything about this circuit…"
+        onkeydown="handleKeyPress(event)"
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
