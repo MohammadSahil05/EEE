@@ -1,0 +1,250 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ElectroLearn – Electronics + AI Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="navbar">
+    <div class="logo">⚡ ElectroLearn</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#components">Components</a>
+      <a href="#applications">Applications</a>
+      <a href="#resources">Resources</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Learn Electronics with AI Assistance</h1>
+      <p>
+        A smart learning hub for basic electronics concepts, components, and real-world applications,
+        powered by an AI-style chatbot to clear your doubts instantly.
+      </p>
+      <button class="primary-btn" onclick="scrollToSection('components')">
+        Start Learning ⚡
+      </button>
+    </div>
+    <div class="hero-graphic">
+      <div class="chip-card">
+        <h2>Ohm’s Law</h2>
+        <p>V = I × R</p>
+        <span class="chip-sub">Voltage • Current • Resistance</span>
+      </div>
+      <div class="pulse-circle"></div>
+    </div>
+  </section>
+
+  <!-- ================= COMPONENTS SECTION ================= -->
+  <section id="components" class="section">
+    <h2>Basic Electronic Components</h2>
+    <p class="section-subtitle">
+      Get familiar with the building blocks of every electronic circuit.
+    </p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Resistor</h3>
+        <p>
+          A resistor limits the flow of electric current in a circuit. It is used
+          to control voltage and current levels.
+        </p>
+        <ul>
+          <li>Symbol: Zig-zag or rectangle</li>
+          <li>Unit: Ohm (Ω)</li>
+          <li>Use: Current limiting, voltage divider</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Capacitor</h3>
+        <p>
+          A capacitor stores electrical energy in the form of an electric field
+          and releases it when required.
+        </p>
+        <ul>
+          <li>Symbol: Two parallel plates</li>
+          <li>Unit: Farad (F)</li>
+          <li>Use: Filtering, timing, coupling</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Diode</h3>
+        <p>
+          A diode allows current to flow only in one direction. It acts like an
+          electrical one-way valve.
+        </p>
+        <ul>
+          <li>Symbol: Triangle with a line</li>
+          <li>Use: Rectification, protection</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Transistor</h3>
+        <p>
+          A transistor works as a switch or amplifier for electronic signals. It’s
+          the heart of modern electronics.
+        </p>
+        <ul>
+          <li>Types: NPN, PNP, MOSFET</li>
+          <li>Use: Switching, amplification</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Integrated Circuit (IC)</h3>
+        <p>
+          An IC is a complete mini-circuit built on a small chip containing
+          many transistors, resistors, etc.
+        </p>
+        <ul>
+          <li>Use: Microcontrollers, op-amps, timers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= APPLICATIONS SECTION ================= -->
+  <section id="applications" class="section alt-bg">
+    <h2>Applications of Electronics</h2>
+    <p class="section-subtitle">
+      Electronics is everywhere – from your mobile phone to renewable energy systems.
+    </p>
+
+    <div class="apps-grid">
+      <div class="app-card">
+        <h3>Power Systems</h3>
+        <p>
+          Power electronics control conversion and flow of electrical energy in
+          grids, inverters, and motor drives.
+        </p>
+      </div>
+      <div class="app-card">
+        <h3>Embedded Systems</h3>
+        <p>
+          Microcontrollers control devices like washing machines, cars, and IoT
+          gadgets using programmed logic.
+        </p>
+      </div>
+      <div class="app-card">
+        <h3>IoT & Robotics</h3>
+        <p>
+          Sensors, actuators, and controllers work together to build smart
+          devices, robots, and automation systems.
+        </p>
+      </div>
+      <div class="app-card">
+        <h3>Communication</h3>
+        <p>
+          Electronics enables communication systems like mobile networks, Wi-Fi,
+          satellite links, and optical fiber.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESOURCES SECTION ================= -->
+  <section id="resources" class="section">
+    <h2>Learning Resources</h2>
+    <p class="section-subtitle">
+      Explore external resources to deepen your understanding.
+    </p>
+
+    <div class="resources-grid">
+      <div class="resource-card">
+        <h3>PDF Notes</h3>
+        <p>Download basic electronics notes for quick revision.</p>
+        <button class="secondary-btn">Download (Mock)</button>
+      </div>
+      <div class="resource-card">
+        <h3>YouTube Tutorials</h3>
+        <p>Watch videos to understand concepts visually.</p>
+        <button class="secondary-btn">View Playlist (Mock)</button>
+      </div>
+      <div class="resource-card">
+        <h3>Simulation Tools</h3>
+        <p>Use online circuit simulators to practice and experiment.</p>
+        <button class="secondary-btn">Try Simulator (Mock)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUIZ SECTION ================= -->
+<section id="quiz" class="section alt-bg">
+  <h2>Test Your Electronics Knowledge</h2>
+  <p class="section-subtitle">
+    Take this short quiz and check how much you’ve understood.
+  </p>
+
+  <div class="quiz-card">
+    <div id="quizIntro">
+      <p>
+        Click the button below to start a 5-question quiz on basic electronics.
+      </p>
+      <button class="primary-btn" onclick="startQuiz()">
+        Start Quiz ▶
+      </button>
+    </div>
+
+    <div id="quizContainer" style="display: none;">
+      <p id="quizQuestion" class="quiz-question"></p>
+      <div id="quizOptions" class="quiz-options"></div>
+      <div class="quiz-bottom">
+        <span id="quizProgress"></span>
+      </div>
+    </div>
+
+    <div id="quizResult" style="display: none;">
+      <h3>Your Result</h3>
+      <p id="quizScoreText"></p>
+      <p id="quizFeedback"></p>
+      <button class="secondary-btn" onclick="restartQuiz()">
+        Try Again 🔁
+      </button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>
+      Made for EEE Mini Project • Electronics + AI Chatbot • ElectroLearn
+    </p>
+  </footer>
+
+  <!-- ================= CHATBOT WIDGET ================= -->
+  <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+    💬
+  </div>
+
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+      <span>ElectroBot – Your Electronics Assistant</span>
+      <button class="close-btn" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody">
+      <!-- Messages will be injected by JS -->
+    </div>
+    <div class="chatbot-input-area">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask me: What is a resistor? Explain Ohm's law..."
+        onkeydown="handleKeyPress(event)"
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 

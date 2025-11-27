@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ElectroLearn – Components</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">⚡ ElectroLearn</div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="components.html" class="nav-link active">Components</a>
+      <a href="applications.html" class="nav-link">Applications</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="quiz.html" class="nav-link">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- COMPONENTS PAGE -->
+  <section class="section fade-in-up">
+    <h2>Basic Electronic Components</h2>
+    <p class="section-subtitle">
+      Get familiar with the building blocks of every electronic circuit.
+    </p>
+
+    <div class="cards-grid">
+      <div class="card fade-in-up fade-delay-1">
+        <h3>Resistor</h3>
+        <p>
+          A resistor limits the flow of electric current in a circuit. It is used
+          to control voltage and current levels.
+        </p>
+        <ul>
+          <li>Symbol: Zig-zag or rectangle</li>
+          <li>Unit: Ohm (Ω)</li>
+          <li>Use: Current limiting, voltage divider</li>
+        </ul>
+      </div>
+
+      <div class="card fade-in-up fade-delay-2">
+        <h3>Capacitor</h3>
+        <p>
+          A capacitor stores electrical energy in the form of an electric field
+          and releases it when required.
+        </p>
+        <ul>
+          <li>Symbol: Two parallel plates</li>
+          <li>Unit: Farad (F)</li>
+          <li>Use: Filtering, timing, coupling</li>
+        </ul>
+      </div>
+
+      <div class="card fade-in-up fade-delay-3">
+        <h3>Diode</h3>
+        <p>
+          A diode allows current to flow only in one direction. It acts like an
+          electrical one-way valve.
+        </p>
+        <ul>
+          <li>Symbol: Triangle with a line</li>
+          <li>Use: Rectification, protection</li>
+        </ul>
+      </div>
+
+      <div class="card fade-in-up fade-delay-1">
+        <h3>Transistor</h3>
+        <p>
+          A transistor works as a switch or amplifier for electronic signals. It’s
+          the heart of modern electronics.
+        </p>
+        <ul>
+          <li>Types: NPN, PNP, MOSFET</li>
+          <li>Use: Switching, amplification</li>
+        </ul>
+      </div>
+
+      <div class="card fade-in-up fade-delay-2">
+        <h3>Integrated Circuit (IC)</h3>
+        <p>
+          An IC is a complete mini-circuit built on a small chip containing
+          many transistors, resistors, etc.
+        </p>
+        <ul>
+          <li>Use: Microcontrollers, op-amps, timers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made for EEE Mini Project • Electronics + AI Chatbot • ElectroLearn</p>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+    💬
+  </div>
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+      <span>ElectroBot – Your Electronics Assistant</span>
+      <button class="close-btn" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody"></div>
+    <div class="chatbot-input-area">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask me: What is a resistor? Explain Ohm's law..."
+        onkeydown="handleKeyPress(event)"
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

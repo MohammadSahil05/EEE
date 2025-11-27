@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ElectroLearn – Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">⚡ ElectroLearn</div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="components.html" class="nav-link">Components</a>
+      <a href="applications.html" class="nav-link">Applications</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="quiz.html" class="nav-link active">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- QUIZ SECTION -->
+  <section class="section alt-bg fade-in-up">
+    <h2>Test Your Electronics Knowledge</h2>
+    <p class="section-subtitle">
+      Take this short quiz and check how much you’ve understood.
+    </p>
+
+    <div class="quiz-card">
+      <div id="quizIntro">
+        <p>
+          Click the button below to start a 5-question quiz on basic electronics.
+        </p>
+        <button class="primary-btn" onclick="startQuiz()">
+          Start Quiz ▶
+        </button>
+      </div>
+
+      <div id="quizContainer" style="display: none;">
+        <p id="quizQuestion" class="quiz-question"></p>
+        <div id="quizOptions" class="quiz-options"></div>
+        <div class="quiz-bottom">
+          <span id="quizProgress"></span>
+        </div>
+      </div>
+
+      <div id="quizResult" style="display: none;">
+        <h3>Your Result</h3>
+        <p id="quizScoreText"></p>
+        <p id="quizFeedback"></p>
+        <button class="secondary-btn" onclick="restartQuiz()">
+          Try Again 🔁
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made for EEE Mini Project • Electronics + AI Chatbot • ElectroLearn</p>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+    💬
+  </div>
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+      <span>ElectroBot – Your Electronics Assistant</span>
+      <button class="close-btn" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody"></div>
+    <div class="chatbot-input-area">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Need help with a question? Ask me."
+        onkeydown="handleKeyPress(event)"
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

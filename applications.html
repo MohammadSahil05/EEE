@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ElectroLearn – Applications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">⚡ ElectroLearn</div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="components.html" class="nav-link">Components</a>
+      <a href="applications.html" class="nav-link active">Applications</a>
+      <a href="resources.html" class="nav-link">Resources</a>
+      <a href="quiz.html" class="nav-link">Quiz</a>
+    </nav>
+  </header>
+
+  <section class="section alt-bg fade-in-up">
+    <h2>Applications of Electronics</h2>
+    <p class="section-subtitle">
+      Electronics is everywhere – from your mobile phone to renewable energy systems.
+    </p>
+
+    <div class="apps-grid">
+      <div class="app-card fade-in-up fade-delay-1">
+        <h3>Power Systems</h3>
+        <p>
+          Power electronics control conversion and flow of electrical energy in
+          grids, inverters, and motor drives.
+        </p>
+      </div>
+      <div class="app-card fade-in-up fade-delay-2">
+        <h3>Embedded Systems</h3>
+        <p>
+          Microcontrollers control devices like washing machines, cars, and IoT
+          gadgets using programmed logic.
+        </p>
+      </div>
+      <div class="app-card fade-in-up fade-delay-3">
+        <h3>IoT & Robotics</h3>
+        <p>
+          Sensors, actuators, and controllers work together to build smart
+          devices, robots, and automation systems.
+        </p>
+      </div>
+      <div class="app-card fade-in-up fade-delay-1">
+        <h3>Communication</h3>
+        <p>
+          Electronics enables communication systems like mobile networks, Wi-Fi,
+          satellite links, and optical fiber.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made for EEE Mini Project • Electronics + AI Chatbot • ElectroLearn</p>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+    💬
+  </div>
+  <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+      <span>ElectroBot – Your Electronics Assistant</span>
+      <button class="close-btn" onclick="toggleChatbot()">✕</button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody"></div>
+    <div class="chatbot-input-area">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask me: Where are electronics used? 😊"
+        onkeydown="handleKeyPress(event)"
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
